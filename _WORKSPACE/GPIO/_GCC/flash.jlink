@@ -1,0 +1,4 @@
+loadfile /Users/srcnert/Desktop/STM32F0-Discovery_FW/_WORKSPACE/GPIO/_GCC/_build/stm32f0xx.hex
+r
+g
+exit

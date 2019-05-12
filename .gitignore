@@ -1,0 +1,10 @@
+*.cproject
+*.project
+*.scvd
+*.srcnert
+*.ini
+*.DS_Store
+_WORKSPACE/GPIO/_GCC/_build/
+_WORKSPACE/GPIO/_GCC/.settings/
+_WORKSPACE/GPIO/_MDKARM/_build/
+_WORKSPACE/GPIO/_MDKARM/_build/JlinkLog.txt
