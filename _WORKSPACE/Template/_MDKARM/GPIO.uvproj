@@ -372,7 +372,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER STM32F0XX DEBUG_ENABLED ASSERT_ENABLED RTT_LOG_ENABLED HSI_VALUE=8000000</Define>
+              <Define>USE_STDPERIPH_DRIVER STM32F0XX DEBUG_ENABLED ASSERT_ENABLED RTT_LOG_ENABLED</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\..\components\ST\STM32F0xx\include;..\..\..\components\toolchain\cmsis\include;..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc;..\..\..\Libraries\STM32F0xx_MyLibrary\inc;..\..\..\Libraries\common;..\..\..\Libraries\debug;..\..\..\Libraries\segger_rtt;..\..\..\Utilities\STM32F0-Discovery;..\inc</IncludePath>
             </VariousControls>
