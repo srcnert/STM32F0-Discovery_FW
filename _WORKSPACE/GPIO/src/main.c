@@ -3,6 +3,8 @@
 #include "stm32f0xx.h"
 #include "stm32f0_discovery.h"
 
+#include "my_gpio_drv.h"
+
 #include "error_check.h"
 #include "rtt_log.h"
 
@@ -18,21 +20,21 @@ int main(void)
        To reconfigure the default setting of SystemInit() function, refer to
        system_stm32f0xx.c file
      */
-
   loge("LOG_INIT.");
 	
   /* Initialize Leds mounted on STM32F0-discovery */
-  STM_EVAL_LEDInit(LED3);
-  STM_EVAL_LEDInit(LED4);
+  my_drv_gpio_pin_output(GPIOC, PIN_8);
+  my_drv_gpio_pin_output(GPIOC, PIN_9);;
 
   /* Turn on LED3 and LED4 */
-  STM_EVAL_LEDOn(LED3);
-  STM_EVAL_LEDOn(LED4);
+  my_drv_gpio_write_pin(GPIOC, PIN_8, PIN_SET);
+  my_drv_gpio_write_pin(GPIOC, PIN_9, PIN_SET);
   for(volatile int i=0; i<5000000; i++){};
 
-	/* Turn off LED3 and LED4 */
-  STM_EVAL_LEDOff(LED3);
-  STM_EVAL_LEDOff(LED4);
+  /* Turn off LED3 and LED4 */
+  my_drv_gpio_write_pin(GPIOC, PIN_8, PIN_RESET);
+  my_drv_gpio_write_pin(GPIOC, PIN_9, PIN_RESET);
+
   for(volatile int i=0; i<5000000; i++){};
 	
   //DEBUG
@@ -42,9 +44,9 @@ int main(void)
 	
   while (1)
   {
-		/* Turn on LED3 and LED4 */
-		STM_EVAL_LEDOn(LED3);
-		STM_EVAL_LEDOn(LED4);
+	  /* Turn on LED3 and LED4 */
+	  my_drv_gpio_write_pin(GPIOC, PIN_8, PIN_SET);
+	  my_drv_gpio_write_pin(GPIOC, PIN_9, PIN_SET);
   }
 }
 

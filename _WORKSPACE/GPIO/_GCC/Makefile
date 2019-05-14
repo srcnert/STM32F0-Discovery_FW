@@ -43,6 +43,11 @@ SRC_FILES += \
 SRC_FILES += \
   $(SDK_ROOT)/components/startup/startup_stm32f0xx_gcc.s \
 
+#My_Driver
+SRC_FILES += \
+  $(SDK_ROOT)/Libraries/STM32F0xx_MyLibrary/src/my_gpio_drv.c \
+
+
 # Include folders common to all targets
 INC_FOLDERS += \
   $(SDK_ROOT)/components/ST/STM32F0xx/include \
