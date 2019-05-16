@@ -20,7 +20,8 @@ void rtt_log_general_print(int terminal, const char* color, const char *file, in
                              //01234567890123456789012345
   static const char *spaces = "                          ";
 	if(!initialized) {
-  	SEGGER_RTT_ConfigUpBuffer(LOG_BUFF, 0, buffer, BUFF_SIZE, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+		//SEGGER_RTT_ConfigUpBuffer(LOG_BUFF, 0, buffer, BUFF_SIZE, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+		SEGGER_RTT_ConfigUpBuffer(LOG_BUFF, 0, buffer, BUFF_SIZE, SEGGER_RTT_MODE_NO_BLOCK_SKIP);
 		initialized = 1;
 	}
 
@@ -39,7 +40,7 @@ void rtt_log_general_print(int terminal, const char* color, const char *file, in
 		current++;
 	}
 	// Print name/line number
-        SEGGER_RTT_printf(LOG_BUFF, "%s:%d",lastSlash,line);	
+    SEGGER_RTT_printf(LOG_BUFF, "%s:%d",lastSlash,line);
 	
 	int nameLen = (current-lastSlash)+1+(line>999?4:((line>99)?3:((line>9)?2:1)));
 	

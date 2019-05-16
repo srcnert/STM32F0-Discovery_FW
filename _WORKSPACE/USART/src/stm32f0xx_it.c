@@ -124,8 +124,7 @@ void EXTI0_1_IRQHandler(void)
 			my_drv_gpio_toggle_pin(GPIOC, PIN_8);
 			my_drv_gpio_toggle_pin(GPIOC, PIN_9);
 			logi("Button click!");
-//			SEGGER_RTT_Write(0, "Button click!\r\n");
-
+		 
 		 	EXTI->PR |= (1 << PIN_0); // Clear pending register by writing 1 
    }
 }
